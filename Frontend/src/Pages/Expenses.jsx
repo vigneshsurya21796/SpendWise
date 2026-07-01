@@ -212,7 +212,7 @@ const Expenses = () => {
                     <span className="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full">{e.category}</span>
                   </td>
                   <td className="px-5 py-3 text-gray-500">{new Date(e.date).toLocaleDateString("en-IN")}</td>
-                  <td className="px-5 py-3 text-gray-400 max-w-[150px] truncate">{e.notes || "—"}</td>
+                  <td className="px-5 py-3 text-gray-400 max-w-37.5 truncate">{e.notes || "—"}</td>
                   <td className="px-5 py-3 text-right font-semibold text-gray-800">{symbol}{e.amount.toLocaleString("en-IN")}</td>
                   <td className="px-5 py-3">
                     <div className="flex gap-2 justify-end">

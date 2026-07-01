@@ -9,7 +9,7 @@ const sendtoken = (User, statusCode, res) => {
     ),
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
-    sameSite: "strict",
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
   };
   res
     .status(statusCode)

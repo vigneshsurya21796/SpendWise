@@ -2,7 +2,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "http://localhost:5000/api/v1",
+  baseURL: import.meta.env.VITE_API_URL || "/api/v1",
   withCredentials: true,
 });
 
@@ -14,9 +14,10 @@ api.interceptors.response.use(
       return Promise.reject(error);
     }
 
-    // Don't redirect for /auth/me — a 401 there just means not logged in
-    const isAuthCheck = error.config?.url?.includes("/auth/me");
-    if (error.response.status === 401 && !isAuthCheck) {
+    // Don't redirect for auth endpoints — their 401s are handled by the form's catch block
+    const url = error.config?.url || "";
+    const isAuthEndpoint = url.includes("/auth/me") || url.includes("/auth/login") || url.includes("/auth/register");
+    if (error.response.status === 401 && !isAuthEndpoint) {
       window.location.href = "/login";
     }
 

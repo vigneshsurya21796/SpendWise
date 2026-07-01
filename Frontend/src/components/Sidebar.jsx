@@ -15,11 +15,15 @@ const navItems = [
   { to: "/settings", label: "Settings", icon: MdSettings },
 ];
 
-const Sidebar = () => {
+const Sidebar = ({ open, onClose }) => {
   const { logout } = useAuth();
 
   return (
-    <aside className="w-60 bg-white border-r border-gray-200 flex flex-col h-full shrink-0">
+    <aside
+      className={`fixed inset-y-0 left-0 z-30 w-60 bg-white border-r border-gray-200 flex flex-col h-full shrink-0 transition-transform duration-300
+        lg:static lg:translate-x-0
+        ${open ? "translate-x-0" : "-translate-x-full"}`}
+    >
       <div className="px-6 py-5 border-b border-gray-100">
         <h1 className="text-xl font-bold text-blue-600">ExpenseTrack</h1>
       </div>
@@ -29,6 +33,7 @@ const Sidebar = () => {
           <NavLink
             key={to}
             to={to}
+            onClick={onClose}
             className={({ isActive }) =>
               `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                 isActive
