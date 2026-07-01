@@ -25,7 +25,7 @@ const Sidebar = ({ open, onClose }) => {
         ${open ? "translate-x-0" : "-translate-x-full"}`}
     >
       <div className="px-6 py-5 border-b border-gray-100">
-        <h1 className="text-xl font-bold text-blue-600">ExpenseTrack</h1>
+        <h1 className="text-xl font-bold text-blue-600">SpendWise</h1>
       </div>
 
       <nav className="flex-1 px-3 py-4 space-y-1">
