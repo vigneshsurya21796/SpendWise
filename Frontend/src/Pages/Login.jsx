@@ -462,9 +462,9 @@ const Login = () => {
         {/* ── Logo — top left ── */}
         <div className="relative z-10 self-start flex items-center gap-2 mb-2">
           <div className="w-7 h-7 bg-white rounded-full flex items-center justify-center shrink-0">
-            <span className="text-blue-600 font-bold text-xs">E</span>
+            <span className="text-blue-600 font-bold text-xs">S</span>
           </div>
-          <span className="text-white font-bold">ExpenseTrack</span>
+          <span className="text-white font-bold">SpendWise</span>
         </div>
 
         {/* Slide content */}

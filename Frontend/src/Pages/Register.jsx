@@ -146,9 +146,9 @@ const Register = () => {
           {/* Logo */}
           <div className="flex items-center gap-2 mb-10">
             <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-              <span className="text-blue-600 font-bold text-sm">E</span>
+              <span className="text-blue-600 font-bold text-sm">S</span>
             </div>
-            <span className="text-white font-bold text-lg">ExpenseTrack</span>
+            <span className="text-white font-bold text-lg">SpendWise</span>
           </div>
 
           <h2 className="text-3xl font-bold text-white mb-2">Start for free</h2>
